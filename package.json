@@ -1,7 +1,12 @@
 {
   "name": "react-stats-maps",
   "version": "0.1.0",
-  "private": true,
+  "main": "lib/index.js",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuelruizc/react-stat-maps.git"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
@@ -39,5 +44,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "bugs": {
+    "url": "https://github.com/manuelruizc/react-stat-maps/issues"
+  },
+  "homepage": "https://github.com/manuelruizc/react-stat-maps#readme",
+  "devDependencies": {},
+  "keywords": [
+    "svg",
+    "maps",
+    "svg maps",
+    "react maps",
+    "stat maps",
+    "map tooltip"
+  ],
+  "author": "Manuel Ruiz",
+  "license": "ISC"
 }
