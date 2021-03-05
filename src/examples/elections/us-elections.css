@@ -1,0 +1,173 @@
+.US-elections-container {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.total-votes-container {
+  display: flex;
+  flex-direction: column;
+}
+.candidates-info-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 250px 0px 250px;
+}
+.candidate-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.candidate-info {
+  font-size: 19px;
+  font-weight: 100;
+  margin-bottom: 10%;
+}
+.candidate-votes-data {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.candidate-votes-data .candidate-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+}
+.candidate-votes-data span {
+  font-size: 22px;
+  font-weight: 500;
+}
+.candidate-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.votes-bar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 250px;
+}
+.votes-bar-container .to-win {
+  font-size: 16px;
+  transform: translateY(-25%);
+}
+.votes-bar-data-container {
+  width: 100%;
+  height: 1.5vh;
+  background-color: rgba(66, 66, 66, 0.2);
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.votes-bar-data-container::before {
+  content: "";
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  width: 0px;
+  height: 150%;
+  border-right: 1pt dashed black;
+}
+.map-stats-container {
+  width: 100%;
+  margin-top: 2%;
+  height: 74vh;
+}
+
+.custom-tooltip {
+  padding: 20px 20px;
+  width: auto;
+}
+.tooltip {
+  border-radius: 4px;
+  overflow: hidden;
+}
+.winner-bar {
+  width: 100%;
+  height: 7px;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.tooltip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.tooltip-header-info {
+  display: flex;
+}
+.tooltip-header-winner-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-right: 50px;
+}
+.president-name {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.electoral-votes {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+}
+.projected-winner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.projected-winner-candidate {
+  font-size: 1rem;
+  font-weight: 900;
+}
+.projected-winner-label {
+  font-size: 0.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.votes-data-container {
+  width: 100%;
+}
+.votes-data-row {
+  width: 100%;
+  border-bottom: 1pt solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.votes-data-header {
+  padding-bottom: 5px;
+}
+.votes-data-header span {
+  font-size: 0.8rem;
+  color: rgba(66, 66, 66, 0.7);
+}
+.votes-data-row span {
+  width: 33.33333333%;
+  font-size: 0.88rem;
+}
+.votes-data-row span:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.votes-data-row span:nth-child(3) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

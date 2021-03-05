@@ -1,13 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import data from "./data.js";
-import StatMap from "./export.js";
-import { USMap } from "./maps.js";
+import * as React from "react";
+import USMap from "../../components/components/USMap";
+import StatMap from "../../components/StatMap";
+import data from "./data";
+import Tooltip from "./Tooltip";
 
-const politicalDivision = { width: 1, color: "#222" };
+export interface USElectionsMapsProps {}
 
-ReactDOM.render(
-  <React.StrictMode>
+const USElectionsMaps: React.SFC<USElectionsMapsProps> = () => {
+  const politicalDivision = { width: 1, color: "#222" };
+  return (
     <StatMap
       colors={[
         "rgb(3,155,215)",
@@ -17,6 +18,9 @@ ReactDOM.render(
       ]}
       stateDefaultColor={"beige"}
       politicalDivision={politicalDivision}
+      renderCustomTooltip={(item: any) => {
+        return <Tooltip item={item} />;
+      }}
       limits={["Active Cases", "desc", [0, 25, 50, 75]]}
       defaultTooltipClassName={"election-tooltip"} // default ''
       defaultTooltipStyle={{}} // object
@@ -26,7 +30,7 @@ ReactDOM.render(
         let maxPercentageParty = "";
         for (let i = 0; i < statistics.length; i++) {
           const stat = statistics[i];
-          const percentage = (100 / totalVotes) * stat.value;
+          const percentage = (100 / totalVotes) * stat.votes;
           if (i === 0) {
             maxPercentage = percentage;
             maxPercentageParty = stat.party;
@@ -44,12 +48,13 @@ ReactDOM.render(
         }
       }}
       data={data}
-      // tooltipOnClick={(data: any) => console.log(data)}
+      tooltipOnClick={(data: any) => console.log(data)}
       usingTooltip={true}
-      // onStateHover={(data: any) => console.log("guapayasos", data)}
-      // onMouseOut={(data: any) => console.log("onMouseOut", data)}
+      onStateHover={(data: any) => console.log("guapayasos", data)}
+      onMouseOut={(data: any) => console.log("onMouseOut", data)}
       map={USMap}
     />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+  );
+};
+
+export default USElectionsMaps;
