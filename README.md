@@ -1,4 +1,4 @@
-# react-svg-maps
+# react-stats-maps
 
 [![npm](https://img.shields.io/npm/v/react-stats-maps)](https://www.npmjs.com/package/react-stats-maps)
 
