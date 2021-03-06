@@ -16,22 +16,22 @@ interface Position {
   yAxis: number;
 }
 interface StatMapProps {
-  data: any[];
-  customLimitComparative?: object;
-  renderCustomTooltip?: any;
   colors?: string[];
-  stateDefaultColor?: string;
-  limits?: any[];
-  politicalDivision?: object;
-  usingTooltip?: boolean;
-  stateDefaultHoverColor?: string;
-  tooltipOnClick?: any;
+  customLimitComparative?: object;
+  data: any[];
   defaultTooltipClassName?: string;
   defaultTooltipStyle?: object;
+  limits?: any[];
   map?: any;
   onStateHover?: any;
   onMouseOut?: any;
+  politicalDivision?: object;
+  renderCustomTooltip?: any;
+  stateDefaultColor?: string;
+  stateDefaultHoverColor?: string;
   svgFile?: any;
+  tooltipOnClick?: any;
+  usingTooltip?: boolean;
 }
 
 const StatMap: React.FC<StatMapProps> = ({
