@@ -15,32 +15,43 @@ interface Position {
   xAxis: number;
   yAxis: number;
 }
-interface Item {
-  stateCode: string;
-}
-interface renderCustomTooltipProps {
-  item: Item | any;
+interface StatMapProps {
+  data: any[];
+  customLimitComparative?: object;
+  renderCustomTooltip?: any;
+  colors?: string[];
+  stateDefaultColor?: string;
+  limits?: any[];
+  politicalDivision?: object;
+  usingTooltip?: boolean;
+  stateDefaultHoverColor?: string;
+  tooltipOnClick?: any;
+  defaultTooltipClassName?: string;
+  defaultTooltipStyle?: object;
+  map?: any;
+  onStateHover?: any;
+  onMouseOut?: any;
+  svgFile?: any;
 }
 
-const StatMap = (props: any) => {
-  const {
-    data = false,
-    customLimitComparative,
-    renderCustomTooltip = null,
-    colors,
-    stateDefaultColor,
-    limits = null,
-    politicalDivision,
-    usingTooltip = true,
-    stateDefaultHoverColor = "blue",
-    tooltipOnClick = null,
-    defaultTooltipClassName = "",
-    defaultTooltipStyle = {},
-    map,
-    onStateHover = null,
-    onMouseOut = null,
-    svgFile = null,
-  } = props;
+const StatMap: React.FC<StatMapProps> = ({
+  data = [],
+  customLimitComparative,
+  renderCustomTooltip = null,
+  colors,
+  stateDefaultColor = "white",
+  limits = null,
+  politicalDivision = { width: 1, color: "#222" },
+  usingTooltip = true,
+  stateDefaultHoverColor = "blue",
+  tooltipOnClick = null,
+  defaultTooltipClassName = "",
+  defaultTooltipStyle = {},
+  map,
+  onStateHover = null,
+  onMouseOut = null,
+  svgFile = null,
+}) => {
   const container = useRef<HTMLDivElement>(null);
   const [tooltipActive, setTooltipState] = useState<boolean>(false);
   const [tooltipPosition, setTooltipPosition] = useState<Position>({
@@ -57,7 +68,10 @@ const StatMap = (props: any) => {
 
   useEffect(() => {
     if (!data && map) {
-      const checkingDefaultLimits = defaultLimitsOrder(limits);
+      let checkingDefaultLimits;
+      if (limits) {
+        checkingDefaultLimits = defaultLimitsOrder(limits);
+      }
       if (!checkingDefaultLimits) return;
       const gElements = document.getElementsByTagName("g");
       colorStatesWithoutData(
@@ -77,6 +91,8 @@ const StatMap = (props: any) => {
     if (limits) {
       colorBy = limits[0];
       orderedData = orderData(data, colorBy);
+    } else {
+      limits = [];
     }
     if (customLimitComparative)
       colorStates(
@@ -212,7 +228,7 @@ const StatMap = (props: any) => {
             tooltipActive={tooltipActive}
             modalPositionUp={modalPositionUp}
             setTooltip={setTooltip}
-            data={props.data}
+            data={data}
             stateData={currentStateData}
             position={tooltipPosition}
             showTooltip={setTooltipState}

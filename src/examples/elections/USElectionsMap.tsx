@@ -22,8 +22,8 @@ const USElectionsMaps: React.SFC<USElectionsMapsProps> = () => {
         return <Tooltip item={item} />;
       }}
       limits={["Active Cases", "desc", [0, 25, 50, 75]]}
-      defaultTooltipClassName={"election-tooltip"} // default ''
-      defaultTooltipStyle={{}} // object
+      defaultTooltipClassName={"election-tooltip"}
+      defaultTooltipStyle={{}}
       customLimitComparative={(data: any) => {
         const { stateCode, statistics, totalVotes } = data;
         let maxPercentage = 0;
@@ -48,7 +48,7 @@ const USElectionsMaps: React.SFC<USElectionsMapsProps> = () => {
         }
       }}
       data={data}
-      tooltipOnClick={(data: any) => console.log(data)}
+      tooltipOnClick={(data: any) => console.log("messi")}
       usingTooltip={true}
       onStateHover={(data: any) => console.log("guapayasos", data)}
       onMouseOut={(data: any) => console.log("onMouseOut", data)}

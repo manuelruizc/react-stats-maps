@@ -1,7 +1,8 @@
 {
   "name": "react-stats-maps",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "main": "lib/index.js",
+  "types": "./lib/index.d.ts",
   "private": false,
   "repository": {
     "type": "git",
@@ -23,9 +24,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build": "rm -rf ./lib && tsc"
   },
   "eslintConfig": {
     "extends": [
