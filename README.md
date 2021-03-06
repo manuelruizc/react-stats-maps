@@ -33,10 +33,10 @@ react-stats-maps is a React.js library for dealing with svg maps, statistics and
 
 ## Installation
 
-Use the package manager [npm](https://pip.pypa.io/en/stable/) to install react-svg-map.
+Use the package manager [npm](https://pip.pypa.io/en/stable/) to install react-stats-map.
 
 ```bash
-npm install react-svg-maps --save
+npm install react-stats-maps --save
 ```
 
 ## Usage
