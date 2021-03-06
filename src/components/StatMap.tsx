@@ -120,10 +120,6 @@ const StatMap: React.FC<StatMapProps> = ({
     }
   }, [data, customLimitComparative]);
 
-  const getSvgMap = (svg: HTMLOrSVGElement) => {
-    console.log(svg);
-  };
-
   const onMouseMove = (event: React.MouseEvent) => {
     const target = event.target as HTMLElement;
     let parentElement = target.parentElement as HTMLElement;
@@ -389,7 +385,6 @@ const colorStates = (
     let colorByValue;
     if (customLimitComparative) {
       colorByValue = customLimitComparative(filteredData[0]);
-      // console.log(colorByValue, filteredData[0].stateCode);
     } else {
       // if there's not custom comparative function value calculator...
       // obtain object of comparative
