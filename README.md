@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/react-stats-maps)](https://www.npmjs.com/package/react-stats-maps)
 
-react-svg-maps is a React.js library for dealing with svg maps, statistics and map actions.
+react-stats-maps is a React.js library for dealing with svg maps, statistics and map actions.
 
 ####
 
